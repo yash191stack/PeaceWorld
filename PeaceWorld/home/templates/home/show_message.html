@@ -7,34 +7,34 @@
   {% endfor %}
 {% endif %}
 
-  <div class="container my-5" style = "padding-top:100px;">
-    <h2 class="text-center mb-4 " style="color:#3E68EE"; > 📬 All Submitted Messages</h2>
+<div class="container my-5" style="padding-top:100px;">
+  <h2 class="text-center mb-4" style="color:#3E68EE"> 📬 All Submitted Messages</h2>
 
-    {% for msg in show_message %}
+  {% for msg in show_message %}
 
-    <!-- Box 1 -->
-    <div style="background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 0 15px rgba(0,0,0,0.1); margin-bottom: 20px;">
-      <h4 style="color: #0D0A78;">  {{ msg.name }}<small>{% if msg.is_updated %}
-    <span style="color: green;">(edited)</span>
-{% endif %}</small></h4>
-      <p><strong>Email:</strong> {{ msg.email }}</p>
-      <p><strong>Phone:</strong> {{ msg.phone_num }}</p>
-      <p><strong>Message:</strong> {{ msg.message }}</p>
-      <a href = "{% url 'delete_message' msg.id %}"class="me-3"
-          style="background-color: #dc3545;text-decoration: none;color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer;">
-    🗑️ Delete
-    
-  </a>
+  <!-- Message Card -->
+  <div style="background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 0 15px rgba(0,0,0,0.1); margin-bottom: 20px;">
+    <h4 style="color: #0D0A78;">{{ msg.name }}
+      <small>
+        {% if msg.is_updated %}<span style="color: green;">(edited)</span>{% endif %}
+      </small>
+    </h4>
+    <p><strong>Email:</strong> {{ msg.email }}</p>
+    <p><strong>Phone:</strong> {{ msg.phone_num }}</p>
+    <p><strong>Message:</strong> {{ msg.message }}</p>
 
-  
-  <a href = "{% url 'update_message' msg.id %}"
-          style="background-color: #f1d50a;text-decoration: none; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer;">
-    Update
-  </a>
+    <!-- Secure Buttons with token -->
+    <a href="{% url 'delete_message' msg.id %}?token={{ msg.secret_token }}" class="me-3"
+       style="background-color: #dc3545; text-decoration: none; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer;">
+      🗑️ Delete
+    </a>
 
-    </div>
-    {% endfor %}
-  
-
+    <a href="{% url 'update_message' msg.id %}?token={{ msg.secret_token }}"
+       style="background-color: #f1d50a; text-decoration: none; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer;">
+      Update
+    </a>
   </div>
+
+  {% endfor %}
+</div>
 {% endblock %}
