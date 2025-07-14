@@ -1,0 +1,11 @@
+{% extends "home/base.html" %}
+{% block body %}
+<main class="container text-center" style="margin-top: 100px;">
+    <h2 class="text-success">✅ Message Submitted!</h2>
+    <p>Thank you for spreading peace. Your message has been added.</p>
+    <p><strong>Your secret token:</strong></p>
+    <div style="font-size: 20px; font-weight: bold; color: #0a58ca;">{{ token }}</div>
+    <p>Keep this safe to edit or delete your message later.</p>
+    <a href="{% url 'home' %}" class="btn btn-primary mt-4">Back to Home</a>
+</main>
+{% endblock %}

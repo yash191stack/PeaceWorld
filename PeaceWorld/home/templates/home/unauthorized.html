@@ -1,0 +1,10 @@
+r{% extends "home/base.html" %}
+{% block body %}
+<main class="container" style="margin-top: 100px;">
+    <div class="text-center">
+        <h2 class="text-danger">🚫 Unauthorized</h2>
+        <p>You are not allowed to perform this action. Invalid token.</p>
+        <a href="{% url 'home' %}" class="btn btn-primary mt-3">Back to Home</a>
+    </div>
+</main>
+{% endblock %}
