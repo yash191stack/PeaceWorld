@@ -1,0 +1,126 @@
+{% extends 'home/base.html' %}
+
+{% block body %}
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="glass-card p-5">
+                            <h1 class="hero-title">
+                                Find Your Inner Peace<br>
+                                Share Your Story
+                            </h1>
+                            <p class="hero-subtitle">
+                                A sacred space where healing begins with a single word. Connect with souls who understand your journey and discover the power of shared compassion.
+                            </p>
+                            <div class="cta-container">
+                                <a href="{% url 'message' %}" class="btn-primary-glass">Share Your Heartfull Message</a>
+                                <a href="{% url 'show_message' %}" class="btn-secondary-glass">Explore Stories</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                🌸
+                            </div>
+                            <h3 class="feature-title">Healing Through Words</h3>
+                            <p class="feature-description">Transform your pain into power by sharing your story. Every word you write is a step toward healing and hope.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                🤝
+                            </div>
+                            <h3 class="feature-title">Community Support</h3>
+                            <p class="feature-description">Connect with others who truly understand your journey. Find comfort in knowing you're never alone in your struggles.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                💫
+                            </div>
+                            <h3 class="feature-title">Inspire Others</h3>
+                            <p class="feature-description">Your story has the power to light up someone's darkest day. Be the beacon of hope someone else needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="stats-section">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stat-item">
+                            <span class="stat-number">2,847</span>
+                            <span class="stat-label">Stories Shared</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stat-item">
+                            <span class="stat-number">1,523</span>
+                            <span class="stat-label">Hearts Healed</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stat-item">
+                            <span class="stat-number">67</span>
+                            <span class="stat-label">Countries</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stat-item">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Hope Restored</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="testimonial-card">
+                            <div class="quote-mark">"</div>
+                            <p class="testimonial-text">
+                                "You will find peace not by trying to escape your problems, but by confronting them courageously. You will find peace not in denial, but in victory.” 
+                            </p>
+                            <div class="testimonial-author">— J. Donald Walters</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="testimonial-card">
+                            <div class="quote-mark">"</div>
+                            <p class="testimonial-text">
+                                “Peace is a daily, a weekly, a monthly process, gradually changing opinions, slowly eroding old barriers, quietly building new structures.” 
+                            </p>
+                            <div class="testimonial-author">— John F. Kennedy.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="cta-section">
+                <h2 class="cta-title">Your Story Matters</h2>
+                <p class="cta-description">Take the first step towards healing and help others find their way too.</p>
+                <a href="/add-message" class="btn-cta-white">Start Your Journey</a>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}
